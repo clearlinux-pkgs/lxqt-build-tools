@@ -6,11 +6,11 @@
 #
 Name     : lxqt-build-tools
 Version  : 0.6.0
-Release  : 1
-URL      : https://downloads.lxqt.org/downloads/lxqt-build-tools/0.6.0/lxqt-build-tools-0.6.0.tar.xz
-Source0  : https://downloads.lxqt.org/downloads/lxqt-build-tools/0.6.0/lxqt-build-tools-0.6.0.tar.xz
-Source99 : https://downloads.lxqt.org/downloads/lxqt-build-tools/0.6.0/lxqt-build-tools-0.6.0.tar.xz.asc
-Summary  : Various packaging tools and scripts for LXQt applications
+Release  : 2
+URL      : https://github.com/lxqt/lxqt-build-tools/releases/download/0.6.0/lxqt-build-tools-0.6.0.tar.xz
+Source0  : https://github.com/lxqt/lxqt-build-tools/releases/download/0.6.0/lxqt-build-tools-0.6.0.tar.xz
+Source1  : https://github.com/lxqt/lxqt-build-tools/releases/download/0.6.0/lxqt-build-tools-0.6.0.tar.xz.asc
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: lxqt-build-tools-bin = %{version}-%{release}
@@ -50,21 +50,27 @@ data components for the lxqt-build-tools package.
 
 %prep
 %setup -q -n lxqt-build-tools-0.6.0
+cd %{_builddir}/lxqt-build-tools-0.6.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1549298992
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1598294836
 mkdir -p clr-build
 pushd clr-build
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 %cmake ..
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1549298992
+export SOURCE_DATE_EPOCH=1598294836
 rm -rf %{buildroot}
 pushd clr-build
 %make_install
