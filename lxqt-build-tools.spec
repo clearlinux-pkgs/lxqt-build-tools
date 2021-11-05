@@ -6,7 +6,7 @@
 #
 Name     : lxqt-build-tools
 Version  : 0.10.0
-Release  : 6
+Release  : 7
 URL      : https://github.com/lxqt/lxqt-build-tools/releases/download/0.10.0/lxqt-build-tools-0.10.0.tar.xz
 Source0  : https://github.com/lxqt/lxqt-build-tools/releases/download/0.10.0/lxqt-build-tools-0.10.0.tar.xz
 Source1  : https://github.com/lxqt/lxqt-build-tools/releases/download/0.10.0/lxqt-build-tools-0.10.0.tar.xz.asc
