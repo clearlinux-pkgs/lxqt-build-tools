@@ -6,7 +6,7 @@
 #
 Name     : lxqt-build-tools
 Version  : 0.10.0
-Release  : 7
+Release  : 8
 URL      : https://github.com/lxqt/lxqt-build-tools/releases/download/0.10.0/lxqt-build-tools-0.10.0.tar.xz
 Source0  : https://github.com/lxqt/lxqt-build-tools/releases/download/0.10.0/lxqt-build-tools-0.10.0.tar.xz
 Source1  : https://github.com/lxqt/lxqt-build-tools/releases/download/0.10.0/lxqt-build-tools-0.10.0.tar.xz.asc
@@ -59,7 +59,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1636127537
+export SOURCE_DATE_EPOCH=1636133701
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -72,7 +72,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1636127537
+export SOURCE_DATE_EPOCH=1636133701
 rm -rf %{buildroot}
 pushd clr-build
 %make_install
