@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBE793007AD22DF7E (tsujan2000@gmail.com)
 #
 Name     : lxqt-build-tools
-Version  : 0.10.0
-Release  : 8
-URL      : https://github.com/lxqt/lxqt-build-tools/releases/download/0.10.0/lxqt-build-tools-0.10.0.tar.xz
-Source0  : https://github.com/lxqt/lxqt-build-tools/releases/download/0.10.0/lxqt-build-tools-0.10.0.tar.xz
-Source1  : https://github.com/lxqt/lxqt-build-tools/releases/download/0.10.0/lxqt-build-tools-0.10.0.tar.xz.asc
+Version  : 0.11.0
+Release  : 9
+URL      : https://github.com/lxqt/lxqt-build-tools/releases/download/0.11.0/lxqt-build-tools-0.11.0.tar.xz
+Source0  : https://github.com/lxqt/lxqt-build-tools/releases/download/0.11.0/lxqt-build-tools-0.11.0.tar.xz
+Source1  : https://github.com/lxqt/lxqt-build-tools/releases/download/0.11.0/lxqt-build-tools-0.11.0.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -51,15 +51,15 @@ data components for the lxqt-build-tools package.
 
 
 %prep
-%setup -q -n lxqt-build-tools-0.10.0
-cd %{_builddir}/lxqt-build-tools-0.10.0
+%setup -q -n lxqt-build-tools-0.11.0
+cd %{_builddir}/lxqt-build-tools-0.11.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1636133701
+export SOURCE_DATE_EPOCH=1650123740
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -72,7 +72,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1636133701
+export SOURCE_DATE_EPOCH=1650123740
 rm -rf %{buildroot}
 pushd clr-build
 %make_install
